@@ -1,11 +1,5 @@
 ﻿namespace DynamicTheme00
 {
-    enum CustomAppTheme
-    {
-        Light,
-        Dark,
-        Warm,
-    }
     public partial class App : Application
     {
         public App()
@@ -39,6 +33,6 @@
                 }
             }
         }
-        Enum _userAppTheme = default;
+        Enum _userAppTheme = AppTheme.Light;
     }
 }

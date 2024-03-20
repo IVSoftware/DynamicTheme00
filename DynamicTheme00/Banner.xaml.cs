@@ -2,7 +2,12 @@ using System.Diagnostics;
 using System.Reflection;
 
 namespace DynamicTheme00;
-
+enum CustomAppTheme
+{
+    Light,
+    Dark,
+    Warm,
+}
 public partial class Banner : ContentView
 {
     public Banner() => InitializeComponent();
@@ -16,8 +21,9 @@ public partial class Banner : ContentView
                 _isSwitchToggled = value;
                 ((App)App.Current!).UserAppTheme = 
                     _isSwitchToggled ? 
-                    CustomAppTheme.Dark :
+                    CustomAppTheme.Warm :
                     CustomAppTheme.Light;
+                OnPropertyChanged();
             }
         }
     }
