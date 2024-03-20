@@ -14,10 +14,14 @@ public partial class Banner : ContentView
             if (!Equals(_isSwitchToggled, value))
             {
                 _isSwitchToggled = value;
-                ((App)App.Current!).UserAppTheme = 
-                    _isSwitchToggled ? 
-                    CustomAppTheme.Dark :
-                    CustomAppTheme.Light;
+
+                if (App.Current is App app)
+                {
+                    app.UserAppTheme =
+                        _isSwitchToggled ?
+                        AppTheme.Dark :
+                        AppTheme.Light;
+                }
             }
         }
     }
