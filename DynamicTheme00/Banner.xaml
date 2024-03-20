@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DynamicTheme00.Banner"
+             x:Name="BannerView">
+    <Grid BackgroundColor="Yellow">
+        <HorizontalStackLayout
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="Center">
+            <Image Source="smartphone.png" HeightRequest="40" Aspect="AspectFit" />
+            <Switch IsToggled="{Binding Source={x:Reference BannerView}, Path=IsSwitchToggled}" />
+            <Image Source="lightning.png" HeightRequest="40" Aspect="AspectFit" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentView>
