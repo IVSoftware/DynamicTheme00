@@ -14,7 +14,6 @@ public partial class Banner : ContentView
             if (!Equals(_isSwitchToggled, value))
             {
                 _isSwitchToggled = value;
-
                 if (App.Current is App app)
                 {
                     app.UserAppTheme =
@@ -22,6 +21,7 @@ public partial class Banner : ContentView
                         AppTheme.Dark :
                         AppTheme.Light;
                 }
+                OnPropertyChanged();
             }
         }
     }
